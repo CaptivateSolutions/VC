@@ -1,0 +1,42 @@
+﻿
+.promotions-page {
+    .wrapper {
+        position: relative;
+        z-index: 1;
+        @media (min-width: 768px) {
+            min-height: 50vh;
+        } 
+    }
+    section.promotions-content {
+        padding: 150px 0 100px;
+        .promo_image {
+           width: 80%;
+           img {
+               width: 100%;
+           }
+           @include respond-to(sm) {
+               width: 100%;
+           }
+           @include respond-to(xs) {
+               margin-bottom: 20px;
+               width: 100%;
+           }
+       }
+       .promo_desc {
+           color: #fff;
+           p {
+               margin-bottom: 20px;
+           }
+       }
+    }
+    @include respond-to(sm) {
+        section.promotions-content {
+            padding: 100px 0 30px;
+        }
+    }
+    @include respond-to(xs) {
+        section.promotions-content {
+            padding: 100px 0 30px;
+        }
+    }
+}

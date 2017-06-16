@@ -1,0 +1,71 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+/**
+ * Basic styles for links
+ */
+a {
+    color: #fff;
+    text-decoration: none;
+
+    @include on-event {
+        color: #fff;
+        text-decoration: none;
+    }
+}
+
+.btn, a {
+    transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    @include on-event {
+        outline: 0 !important;
+        box-shadow: none !important;
+    }
+}
+
+/**
+ * Basic styles for input fields
+ */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea, select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-focus-ring-color: none;
+    outline: none;
+     @include on-event {
+        outline: 0 !important;
+        box-shadow: none !important;
+    }
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.compat-object-fit {
+   background-size: cover;
+   background-position: center center;
+   img {display: none !important;}
+}
+
+.less-padding-left {
+    padding-left: 5px;
+    @include respond-to(xs) {
+        padding-left: 15px;
+    }
+}
+
+.less-padding-right {
+    padding-right: 5px;
+    @include respond-to(xs) {
+        padding-right: 15px;
+    }
+}
+
+p.p-no-margin {
+   margin-bottom: 0;
+}

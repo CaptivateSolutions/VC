@@ -1,0 +1,263 @@
+//main: ../main.scss
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the home page.
+// -----------------------------------------------------------------------------
+
+.fixed-bg-pattern {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    z-index: 0;
+    background-color:#000;
+    /*filter:progid:DXImageTransform.Microsoft.gradient(GradientType=1,startColorstr=#000, endColorstr=#303030);
+    background-image: -ms-linear-gradient(left, #000000 0, #303030 25%, #303030 75%, #000000 100%);
+    background-image: -moz-linear-gradient(left, #000000 0, #303030 25%, #303030 75%, #000000 100%);
+    background-image: -o-linear-gradient(left, #000000 0, #303030 25%, #303030 75%, #000000 100%);
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #000000), color-stop(25, #303030), color-stop(75, #303030), color-stop(100, #000000));
+    background-image: -webkit-linear-gradient(left, #000000 0, #303030 25%, #303030 75%, #000000 100%);
+    background-image: linear-gradient(to right, #000000 0, #303030 25%, #303030 75%, #000000 100%);*/
+}
+.home {
+    background: #000;
+    color: #fff;
+
+    section.full-banner {
+        position: relative;
+        z-index: 1;
+        background-image: url('../assets/images/demoAD.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        .goToLink {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            text-align: center;
+            @include transform(translate(-50%, -50%));
+            .fa-chevron-down {
+                display: block;
+                font-size: 50px;
+            }
+            .text {
+                font-size: 20px;
+            }
+        }
+        .bookNowLink {
+            padding: 8px 30px;
+            position: absolute;
+            bottom: 150px;
+            left: 50%;
+            @include transform(translateX(-50%));
+        }
+    }
+
+    .wrapper {
+        position: relative;
+        z-index: 1;
+    }
+
+    section.hero {
+        position: relative;
+    }
+
+    section.featured-food {
+        background: #fff;
+        padding: 40px 0;
+        color: #000;
+        // .food-banner {
+        //     position: relative;
+        //     .food-holder {
+        //         margin: auto;
+        //         width: 80%;
+        //         .img-holder {
+        //             display: table-cell;
+        //             vertical-align: middle;
+        //             height: 259px;  // define height
+        //             width: 259px;  // define width
+        //             box-shadow: 3px 4px 8px #000;
+        //             box-shadow: 3px 4px 8px rgba(0,0,0,.5);
+        //             @include respond-to(xs) {
+        //                 width: 100%;
+        //                 display: block;
+        //             }
+        //             img {
+        //                 height: 100%;
+        //                 width: 100%;
+        //                 object-fit: cover;
+        //             }
+        //             @include respond-to(xs) {
+        //                 margin-bottom: 20px;
+        //             }
+        //         }
+        //         .content {
+        //             display: table-cell;
+        //             vertical-align: middle;
+        //             padding-left: 30px;
+        //             .name {
+        //                 margin: 0;
+        //                 margin-bottom: 5px;
+        //                 color: #a11f21;
+        //                 font-size: 25px;
+        //                 text-transform: capitalize;
+        //             }
+        //             .price {
+        //                 margin-top: 0;
+        //                 margin-bottom: 20px;
+        //                 color: #808080;
+        //                 font-size: 25px;
+        //                 text-transform: uppercase;
+        //             }
+        //             .desc {
+        //                 margin-bottom: 20px;
+        //                 font-size: 12px;
+        //             }
+        //             @include respond-to(sm) {
+        //                 .name, .price {font-size: 20px;}
+        //             }
+        //             @include respond-to(xs) {
+        //                 width: 100%;
+        //                 display: block;
+        //                 padding-left: 0;
+        //                 .name, .price {
+        //                     font-size: 20px;
+        //                 }
+        //                 .desc {
+        //                     margin-bottom: 0;
+        //                     text-align: justify;
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
+
+        .food-carousel {
+          position: relative;
+          .carousel-wrap {
+            margin: auto;
+            width: 80%;
+            .food-holder {
+                .img-holder {
+                    display: table-cell;
+                    vertical-align: middle;
+                    height: 259px;  // define height
+                    width: 259px;  // define width
+                    box-shadow: 3px 4px 8px #000;
+                    box-shadow: 3px 4px 8px rgba(0,0,0,.5);
+                    @include respond-to(xs) {
+                        display: block;
+                        margin: 0 auto;
+                    }
+                    img {
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                    @include respond-to(xs) {
+                        margin-bottom: 20px;
+                    }
+                }
+                .content {
+                    display: table-cell;
+                    vertical-align: middle;
+                    padding-left: 30px;
+                    .name {
+                        margin: 0;
+                        margin-bottom: 5px;
+                        color: #a11f21;
+                        font-size: 25px;
+                        text-transform: capitalize;
+                    }
+                    .price {
+                        margin-top: 0;
+                        margin-bottom: 20px;
+                        color: #808080;
+                        font-size: 25px;
+                        text-transform: uppercase;
+                    }
+                    .desc {
+                        margin-bottom: 20px;
+                        font-size: 12px;
+                    }
+                    @include respond-to(sm) {
+                        .name, .price {font-size: 20px;}
+                    }
+                    @include respond-to(xs) {
+                        width: 100%;
+                        display: block;
+                        padding-left: 0;
+                        .name, .price {
+                            font-size: 20px;
+                            text-align: center;
+                        }
+                        .desc {
+                            margin-bottom: 0;
+                            text-align: justify;
+                        }
+                    }
+                }
+            }
+          }
+
+          .custom-control {
+            background: none;
+            float: left;
+            height: 35px;
+            width: 35px;
+            position: absolute;
+            top: 50%;
+            @include transform(translateY(-50%));
+
+            .icon {
+              &:before {
+                color: #929497;
+                font-size: 35px;
+                cursor: pointer;
+                &:hover {
+                  color: #c0c0c0;
+                }
+                @include respond-to(xs) {
+                  font-size: 26px;
+                }
+              }
+            }
+
+            &.left {
+              left: 35px;
+              @include respond-to(xs) {
+                left: 7px;
+              }
+              @include respond-to(sm) {
+                left: 0;
+              }
+            }
+
+            &.right {
+              right: 35px;
+              @include respond-to(xs) {
+                right: 7px;
+              }
+              @include respond-to(sm) {
+                right: 0;
+              }
+            }
+
+          }
+        }
+    }
+
+    @include respond-to(xs) {
+        section.full-banner {
+            .bookNowLink {
+                bottom: 20%;
+            }
+            .goToLink {
+                .fa-chevron-down {
+                    font-size: 35px;
+                }
+            }
+        }
+    }
+}

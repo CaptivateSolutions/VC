@@ -1,0 +1,128 @@
+﻿
+input.custom-style {
+    background: #fff;
+    border: none;
+    border-radius: 8px;
+    &.zero-radius {
+        border-radius: 0;
+    }
+    @include respond-to(xs) {
+        font-size: 12px;
+    }
+}
+
+select.custom-style {
+    padding: 0 50px 0 15px;
+    height: 44px;
+    background: #fff url(../assets/images/arrow.png) no-repeat right 10px top 50%;
+    background-size: 20px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 8px;
+    font-size: 14px;
+    &::-ms-expand {
+        display: none;
+    }
+    @include respond-to(xs) {
+        font-size: 12px;
+    }
+}
+
+.datepick.custom-style {
+    background: #fff;
+    padding: 0 15px;
+    height: 44px;
+     /*&::-webkit-inner-spin-button {
+        display: none;
+     }
+     &::-webkit-calendar-picker-indicator {
+         font-size: 20px;
+         opacity: 0;
+     }*/ 
+     @include respond-to(xs) {
+         font-size: 12px;
+     }
+}
+
+.form-control {
+    height: auto;
+}
+
+.form-branch-selection {
+   .form-inline {
+        .sel-nearest {
+            margin-right: 20px;
+            height: 44px;
+        }
+        .select-branch {
+            width: 215px;
+        }
+        .datepick.custom-style {
+            width: 187px;
+        } 
+        .view-rooms {
+            margin-left: 20px;
+            height: 44px;
+        }
+        @include respond-to(md) {
+            .select-branch { width: 180px; height: 40px; }
+            .datepick.custom-style {width: 156px; height: 40px;}
+            .sel-nearest {
+                margin-right: 10px;
+                padding: 10px 17px;
+                height: 40px;
+            }
+            .view-rooms {
+                margin-left: 10px;
+                padding: 10px 17px;
+                height: 40px;
+            }
+        }
+        @include respond-to(sm) {
+            .form-group {
+                width: 33.33%;
+                float: left;
+                padding: 0 5px;
+            }
+            .sel-nearest, .select-branch, .datepick.custom-style, .view-rooms {
+                width: 100%;
+                margin: 5px 0;
+                height: 44px;
+            }
+        }
+        @include respond-to(xs) {
+            .form-group {margin-bottom: 8px;}
+            .sel-nearest {margin-right: 0;}
+            .select-branch {
+                width: 100%;
+            }
+            .datepick.custom-style {
+                width: 100%;
+            } 
+            .view-rooms {margin-left: 0;}
+        }
+    }
+}
+
+.custom-upload-holder {
+    position: relative;
+    overflow: hidden; 
+    input[type="file"] {
+        position: absolute;
+        top: 0;
+        right: 0;
+        opacity: 0;
+        z-index: 1;
+        width: 40%;
+    }
+    .upload-text {
+        width: 60%;
+    }
+    .bttn-upload {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40%;
+    }
+}

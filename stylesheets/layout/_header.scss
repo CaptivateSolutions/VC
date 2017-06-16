@@ -1,0 +1,252 @@
+//main: ../main.scss
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+.custom-navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background: #000;
+    background: rgba(0,0,0,.5);
+    margin-bottom: 0;
+    border: none;
+    border-radius: 0;
+    @include transition(.3s ease-in-out);
+    .navbar-header {
+        .navbar-brand {
+            display: block;
+            padding: 0 15px;
+            height: 100%;
+            img {
+                height: 100px;
+                @include respond-to(md) {
+                    height: 80px;
+                }
+                @include respond-to(xs) {
+                    height: 60px;
+                }
+            }
+            @include respond-to(sm) {
+                padding-right: 0;
+                img {height: 60px;}              
+            }
+        }
+    }
+    .navbar-collapse {
+        float: right;
+        padding-right: 0;
+        .navbar-nav {
+            li {
+                a {
+                    padding: 40px 15px;
+                    font-size: 16px;
+                    text-transform: capitalize;
+                    @include transition(.3s ease-in-out);
+                    @include on-event() {
+                        background: none;
+                        color: #c0c0c0;
+                    }
+                    @include respond-to(md) {
+                        padding: 30px 10px;
+                    }
+                    @include respond-to(sm) {
+                        padding: 20px 10px;
+                        font-size: 14px;
+                    }
+                }
+                &:last-child {
+                    a {padding-right: 0;}
+                }
+                &.active {
+                    a {color: #c0c0c0;}
+                }
+            }
+        }
+    }
+    @include respond-to(xs) {
+        &.changeBg {
+            background: #000;
+            background: rgba(0,0,0,.9);
+        } 
+        .navbar-header {
+            position: relative;
+            float: none;
+            height: 60px;
+            .navbar-toggle {
+                position: absolute;
+                top: 50%;
+                right: 5px;
+                margin: 0;
+                @include transform(translate(0, -50%));
+                .icon-bar {
+                    @include size(30px, 4px);
+                    background-color: #fff;
+                    border-radius: 0;
+                    @include transition(all .2s cubic-bezier(1,.04,.53,.87));
+
+                    & + .icon-bar {
+                        margin-top: 4px;
+                    }
+                }
+
+                &.menu-on {
+                    .icon-bar {
+                        &:nth-child(2) {
+                            @include transform(rotate(225deg) translate(-7px,-5px));
+                        }
+                        &:nth-child(3) {
+                            opacity: 0;
+                        }
+                        &:last-child {
+                            @include transform(rotate(-225deg) translate(-6px,5px));
+                        }
+                    }
+                }
+            }
+        }
+        .navbar-collapse {
+            float: none;
+            padding-right: 15px;
+            .navbar-nav {
+                margin: 0 -15px;
+                li {
+                    border-bottom: 1px solid rgba(255,255,255,.2);
+                    a {
+                        padding: 10px 15px;
+                        font-size: 14px;
+                    }
+                    &:first-child {
+                        a {padding-left: 15px;}
+                    }
+                }
+            }
+        }
+    }
+
+    &.cus-nav2 {
+        @include respond-to(xs) {
+            padding: 10px 0;
+        }
+        .navbar-header {
+            float: left;
+            .navbar-brand {
+                @include respond-to(sm) {
+                    img {
+                        height: 80px;
+                    }
+                }
+            }
+        }
+        #navbar {
+            position: relative;
+            overflow: hidden;
+            li {
+                padding: 30px 15px;
+                margin: 0;
+                color: #fff;
+                font-size: 20px;
+                text-align: right;
+                .branch-main {
+                    color: #c0c0c0;
+                }
+            }
+            @include respond-to(xs) {
+                padding-right: 15px;
+                ul {
+                    margin: 0 -15px;
+                }
+                li {
+                    padding: 15px 0;
+                    float: none !important;
+                    font-size: 14px;
+                    .branch-main {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+    &.fixed-top {
+        position: fixed;
+    }
+}
+
+.custom-navbar2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background: rgba(0,0,0,.5);
+    margin-bottom: 0;
+    border: none;
+    border-radius: 0;
+    .navbar-header {
+        float: none;
+        h3 {
+            padding: 30px 0;
+            margin: 0;
+            color: #fff;
+            font-size: 20px;
+            text-align: right;
+            text-transform: uppercase;
+            .branch-main {
+                color: #c0c0c0;
+            }
+        }
+        .nav-holder {
+            display: table;
+            width: 100%;
+            .back-link {
+                display: table-cell;
+                vertical-align: middle;
+                h3 {
+                    text-align: left;
+                }
+                @include respond-to(xs) {
+                    h3 {
+                        a {
+                            display: block;
+                            background: #1a1a1a;
+                            height: 30px;
+                            width: 30px;
+                            border-radius: 50%;
+                            border: 2px solid;
+                            line-height: 25px;
+                            text-align: center;
+                            .text {display: none;}
+                        }
+                    }
+                }
+            }
+            .head-title {
+                display: table-cell;
+                text-align: right;
+
+                h3 {
+                    text-transform: none;
+                }
+            }
+        }
+    }
+    @include respond-to(sm) {
+        .navbar-header h3 {
+            padding: 20px 0;
+        }
+    }
+    @include respond-to(xs) {
+        .navbar-header {
+            h3 {
+                padding: 20px 15px;
+                float: none !important;
+                font-size: 16px;
+                .branch-main {
+                    display: block;
+                }
+            }
+        }
+    }
+}

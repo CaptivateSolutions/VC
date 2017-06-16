@@ -1,0 +1,8 @@
+// -----------------------------------------------------------------------------
+// This file contains all @font-face declarations, if any.
+// -----------------------------------------------------------------------------
+
+@include font-face($font-corbel, $base-url + 'fonts/', 'Corbel', 'Corbel');
+@include font-face($font-corbel-bold, $base-url + 'fonts/', 'CorbelBold', 'CorbelBold');
+@include font-face($font-corbel-italic, $base-url + 'fonts/', 'CorbelItalic', 'CorbelItalic');
+@include font-face($font-corbel-bold-italic, $base-url + 'fonts/', 'CorbelBoldItalic', 'CorbelBoldItalic');

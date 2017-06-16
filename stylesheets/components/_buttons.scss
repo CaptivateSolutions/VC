@@ -1,0 +1,68 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+.default-bttn {
+    background: #c0c0c0;
+    border: none;
+    border-radius: 8px;
+    padding: 5px 20px;
+    color: #000;
+    font-size: 14px;
+    @include on-event() {
+        background: #fff;
+        border: none;
+        outline: 0;
+        box-shadow: none;
+    }
+}
+
+.input-style-bttn {
+    background: #c0c0c0;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 30px;
+    color: #000;
+    font-size: 14px;
+    @include transition(.3s ease-in-out);
+    @include on-event() {
+        background: #fff;
+        color: #000;
+        border: none;
+        outline: 0;
+        box-shadow: none;
+    }
+    /*@include respond-to(sm) {
+        border: 1px solid rgba(255,255,255,.5);
+    }
+    @include respond-to(xs) {
+        border: 1px solid rgba(255,255,255,.5);
+    }*/
+}
+
+.gray-bttn {
+    background: #c0c0c0;
+    border-radius: 8px;
+    padding: 10px 0;
+    color: #000;
+    font-size: 20px;
+    @include transition(.3s ease-in-out);
+    @include on-event() {
+        background: #fff;
+    }
+    @include respond-to(xs) {
+        font-size: 18px;
+    }
+    &.next-step, &.view-menu-bttn, &.gotoHome {
+        padding: 15px 10px;
+        width: 100%;
+        font-size: 24px;
+        text-transform: uppercase;
+        @include respond-to(sm) {
+            font-size: 16px;
+        }
+        @include respond-to(xs) {
+            font-size: 14px;
+        }
+    }
+}

@@ -1,0 +1,56 @@
+﻿
+.careers-page {
+    .wrapper {
+        position: relative;
+        z-index: 1;
+        min-height: 50vh;
+    }
+    section.careers-content {
+        padding: 150px 0 30px;
+       .cr_desc {
+            margin-bottom: 20px;
+            ul {
+                padding-left: 15px;
+                color: #fff;
+                font-size: 14px;
+            } 
+        }
+        .form_applicant {
+           .form-group {
+                margin-bottom: 5px;
+                input {
+                    padding: 10px 15px;
+                    font-size: 14px;
+                }
+                .custom-upload-holder .bttn-upload {
+                    height: 100%;
+                    border-radius: 0;
+                    background: #1a1a1a;
+                    color: #c0c0c0;
+                }
+                .submit-app-bttn {
+                    border: 0;
+                    border-radius: 0;
+                    background: #1a1a1a;
+                    color: #c0c0c0;
+                    font-size: 16px;
+                    @include transition(.3s ease-in-out);
+                    @include on-event() {
+                        background: #c0c0c0;
+                        color: #1a1a1a;
+                    }
+                }
+           }
+       }
+    }
+    @include respond-to(sm) {
+        section.careers-content {
+            padding: 100px 0 30px;
+        }
+    }
+    @include respond-to(xs) {
+        section.careers-content {
+            padding: 100px 0 30px;
+        }
+    }
+}

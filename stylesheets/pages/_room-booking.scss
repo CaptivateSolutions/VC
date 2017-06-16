@@ -1,0 +1,164 @@
+﻿//main: ../main.scss
+
+.room-booking {
+    padding: 150px 0 50px;
+    .wrapper {
+        position: relative;
+        z-index: 1;
+    }
+    .room-choice {
+        margin-bottom: 30px;
+        .holder {
+            color: #808080;
+            .img-holder {
+                position: relative;
+                z-index: 1;
+                display: table-cell;
+                height: 300px;
+                width: 50%;
+                /*&:after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    bottom: 0;
+                    height: 15%;
+                    width: 75%;
+                    z-index: -1;
+                    border-radius: 50%;
+                    box-shadow: 0 3px 7px #fff,0 4px 20px #fff;
+                    box-shadow: 0 3px 7px #fff,0 4px 20px rgba(255,255,255,.5);
+                }*/
+                &:before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    top: 0;
+                    height: 17px;
+                    width: 95%;
+                    z-index: -1;
+                    border-radius: 50%;
+                    box-shadow: 0 -3px 3px -1px #fff,0 -3px 8px -1px #fff;
+                }
+                &:after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    bottom: 0;
+                    height: 17px;
+                    width: 95%;
+                    z-index: -1;
+                    border-radius: 50%; 
+                    box-shadow: 0 4px 3px -2px #fff,0 4px 8px -2px #fff; 
+                }
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+                @include respond-to(xs) {
+                    display: block;
+                    width: 100%;
+                    min-height: 200px;
+                }
+            }
+            .content {
+                display: table-cell;
+                vertical-align: top;
+                padding: 10px 40px;
+                h3 {
+                    color: #c0c0c0;
+                    font-size: 18px;
+                    text-transform: uppercase;
+                }
+                .testimonial {
+                    margin: 20px 0;
+                    font-size: 18px;
+                }
+                .room-desc {
+                    font-size: 12px;
+                }
+                @include respond-to(sm) {
+                    padding: 10px 15px;
+                }
+                @include respond-to(xs) {
+                    padding: 10px 15px;
+                    h3 {
+                        font-size: 16px;
+                    }
+                    .testimonial {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+    .block-selection.holder {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        label {
+            width: 100%;
+            font-weight: normal;
+            cursor: pointer;
+            display: block;
+            margin: 0;
+            background: #000;
+            border-radius: 8px;
+        }
+        .toggle-opt {
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            @include transform(translateY(-50%));
+            .radio-select-no-label {
+                position: relative;
+                height: 22px;
+                width: 22px;
+                &:before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 22px;
+                    width: 22px;
+                    background: #fff;
+                }
+                &:after {
+                    content: '\f00c';
+                    font-family: 'FontAwesome';
+                    display: none;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 22px;
+                    width: 22px;
+                    color: #000;
+                    text-align: center;
+                    line-height: 22px;
+                }
+            }
+            input[type="checkbox"] {
+                display: none;
+            }
+            input[type="checkbox"]:checked +  .radio-select-no-label:after {
+                display : block;
+            }
+        }
+    }
+    @include respond-to(sm) {
+        padding: 100px 0 30px;
+    }
+    @include respond-to(xs) {
+        padding: 100px 0 30px;
+    }
+}

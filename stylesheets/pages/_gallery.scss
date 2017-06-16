@@ -1,0 +1,421 @@
+﻿//main: ../main.scss
+.gallery {
+    padding: 150px 0 80px;
+    .wrapper {
+        position: relative;
+        //z-index: 1;
+    }
+    section.gal-content {
+        .gal-list {
+            .itm-list {
+                position: relative;
+                z-index: 1;
+                margin-bottom: 20px;
+                background: #000;
+                border: 1px solid #fff;
+                border: 1px solid rgba(255,255,255,.5);
+                &:before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    top: 0;
+                    height: 15%;
+                    width: 95%;
+                    z-index: -1;
+                    border-radius: 50%;
+                    /*box-shadow: 0 -1px 6px #fff,0 -2px 8px #fff;*/
+                    /*box-shadow: 0 -1px 6px #fff,0 -2px 8px rgba(255,255,255,.5);*/
+                    /*box-shadow: 0 -3px 2px -1px #fff;*/
+                    box-shadow: 0 -3px 3px -1px #fff,0 -3px 9px -1px #fff;
+                    
+                }
+                &:after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    bottom: 0;
+                    height: 15%;
+                    width: 95%;
+                    z-index: -1;
+                    border-radius: 50%;
+                    /*box-shadow: 0 1px 5px #fff,0 2px 8px #fff;*/
+                    /*box-shadow: 0 1px 5px #fff,0 2px 8px rgba(255,255,255,.5);*/  
+                    /*box-shadow: 0 4px 2px -2px #fff;*/  
+                    box-shadow: 0 4px 3px -2px #fff,0 4px 9px -2px #fff;
+                }
+                &:hover {
+                    outline: 1px solid #c0c0c0;
+                }
+                .itm_img_holder {
+                    background: #000;
+                    height: 150px;
+                    width: 100%;
+                    overflow: hidden;
+                    cursor: pointer;
+                    img {
+                        height: auto;
+                        width: 100%;
+                    }
+                }
+                .desc {
+                    padding: 10px 15px;
+                    background: #000;
+                    .itm-name {
+                        margin-bottom: 0;
+                        color: #c0c0c0;
+                    }
+                    .itm-loc {
+                        margin-bottom: 0;
+                        color: #929497;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+    .itm_gal_preview {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        background: #000;
+        background: rgba(0,0,0,.8);
+        z-index: 9999;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        visibility: hidden;
+        @include transition(.3s ease-in-out);
+        .itm_prev_holder {
+            position: relative;
+            top: 50%;
+            @include transform(translateY(-50%));
+            .itm_gal {
+                position: relative;
+                overflow: hidden;
+                background: #1a1a1a;
+                .prev_header {
+                    position: relative;
+                    overflow: hidden;
+                    padding: 10px 15px;
+                    .prev_itm_name {
+                        margin-right: 10px;
+                        color: #c0c0c0;
+                        font-size: 16px;
+                    }
+                    .prev_itm_loc {
+                        color: #929497;
+                        font-size: 12px;
+                    }
+                    .close_itm_prev {
+                        color: #c0c0c0;
+                        font-size: 20px;
+                        cursor: pointer;
+                    }
+                }
+                .prev_itm_main_img {
+                    height: 500px;
+                    width: 100%;
+                    overflow: hidden;
+                    img {
+                        height: auto;
+                        width: 100%;
+                    }
+                }
+                .prev_footer {
+                    .thumb_list {
+                        position: relative;
+                        overflow: hidden;
+                        padding: 15px 8px;
+                        .itm_thumb {
+                            float: left;
+                            margin: 0 10px;
+                            height: 50px;
+                            cursor: pointer;
+                            overflow: hidden;
+                            img {
+                                height: auto;
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+            .bookRoom {
+                margin-top: 20px;
+                .form-inline {
+                    color: #fff;
+                    text-align: center;
+                    .form-group {
+                        position: relative;
+                    }
+                    .desc {
+                        width: 170px;
+                        padding-right: 10px;
+                        font-size: 16px;
+                    }
+                    .input-style-bttn {
+                        height: 44px;
+                        width: 200px;
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+
+        &.showPreview {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    @include respond-to(md) {
+        section.gal-content {
+            .gal-list {
+                .itm-list {
+                    .itm_img_holder {
+                        height: 140px;
+                    }
+                }
+            }
+        }
+        .itm_gal_preview {
+            .itm_prev_holder {
+                .itm_gal {
+                    .prev_itm_main_img {
+                        height: 450px;
+                    }
+                    .prev_footer {
+                        .thumb_list {
+                            .itm_thumb {
+                                height: 65px;
+                            }
+                        }
+                    }
+                }
+                .bookRoom {
+                    .form-inline {
+                        .datepick.custom-style {
+                            width: 140px;
+                        }
+                        .input-style-bttn {
+                            width: auto;
+                        }
+                    }
+                }
+            }  
+        }
+    }
+     @include respond-to(sm) {
+        section.gal-content {
+            .gal-list {
+                .itm-list {
+                    .itm_img_holder {
+                        height: 100px;
+                    }
+                }
+            }
+        }
+        .itm_gal_preview {
+            .itm_prev_holder {
+                .itm_gal {
+                    .prev_itm_main_img {
+                        max-height: 500px;
+                        height: auto;
+                    }
+                    .prev_footer {
+                        .thumb_list {
+                            .itm_thumb {
+                                height: 65px;
+                            }
+                        }
+                    }
+                }
+                .bookRoom {
+                    .form-inline {
+                        .desc {
+                            display: block;
+                            width: 100%;
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+            }  
+        }
+    }
+    @include respond-to(xs) {
+        padding: 100px 0 30px;
+        section.gal-content {
+            .gallery-sidebar {
+                position: fixed;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                overflow: hidden;
+                z-index: 9999;
+                height: 58px;
+                width: 100%;
+                background: #1a1a1a;
+                @include transition (.3s cubic-bezier(.65,.05,.36,1));
+                .heading {
+                    position: fixed;
+                    left: 0;
+                    right: 0;
+                    z-index: 10000;
+                    background: #1a1a1a;
+                    .open-gallery {
+                        padding: 20px 0;
+                        background-color: #c0c0c0;
+                        color: #1a1a1a;
+                        font-size: 16px;
+                        text-align: center;
+                        text-transform: uppercase;
+                        cursor: pointer;
+                    }
+                    .close-gallery {
+                        display: none;
+                        position: fixed;
+                        top: 20px;
+                        right: 15px;
+                        cursor: pointer;
+                        @include transition (.3s cubic-bezier(.65,.05,.36,1));
+                        img {width: 16px;}
+                    }
+                }
+                .holder {
+                    padding-top: 60px;
+                    overflow: auto;
+                    height: 100%;
+                    .content {
+                        min-height: calc(100% - 57px);
+                    }
+                }
+                .branch-select, .available-rooms, .room-type, .recommendation {
+                    margin-bottom: 0;
+                }
+                .branch-select h4, .available-rooms h4, .room-type h4, .recommendation h4 {
+                    text-align: left !important;
+                }
+                .search-again-holder {
+                    .search-room-bttn {
+                        border-radius: 0;
+                        padding: 15px 0;
+                        text-transform: uppercase;
+                        img {
+                            margin-top: -2px;
+                            margin-left: 10px;
+                        }
+                    }
+                }
+                &.showFilter {
+                    height: 100%;
+                    @include transition (.3s ease-in-out);
+                    .open-gallery span.fa-search {display: none;}
+                    .close-gallery { display: block; }
+                }
+            }
+            .gal-list {
+                .itm-list {
+                    .itm_img_holder {
+                        height: 170px;
+                    }
+                }
+            }
+        }
+        .itm_gal_preview {
+            .itm_prev_holder {
+                .itm_gal {
+                    .prev_itm_main_img {
+                        max-height: 250px;
+                        height: auto;
+                    }
+                    .prev_footer {
+                        .thumb_list {
+                            .itm_thumb {
+                                height: 80px;
+                            }
+                        }
+                    }
+                }
+                .bookRoom-holder {
+                    margin-top: 10px;
+                    text-align: center;
+                    p {
+                        margin-bottom: 15px;
+                        color: #fff;
+                        font-size: 16px;
+                    }
+                    .input-style-bttn {
+                        padding: 10px 40px;
+                        font-size: 16px;
+                    }
+                }
+            }  
+        }
+        #bookRoom {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            z-index: 9999;
+            height: 0;
+            width: 100%;
+            background: #1a1a1a;
+            padding: 0;
+            border-radius: 0;
+            @include  transition(.3s cubic-bezier(.65,.05,.36,1));
+            .heading {
+                position: fixed;
+                left: 0;
+                right: 0;
+                z-index: 10000;
+                background: #1a1a1a;
+                .head_text {
+                    padding: 20px 0;
+                    background-color: #c0c0c0;
+                    color: #1a1a1a;
+                    font-size: 18px;
+                    text-align: center;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                }
+                .close_roomBook {
+                    display: none;
+                    position: fixed;
+                    top: 21px;
+                    right: 15px;
+                    cursor: pointer;
+                    pointer-events: auto;
+                    img {width: 16px;}
+                }
+            }
+            .form-inline {
+                padding: 90px 15px 0;
+                overflow: auto;
+                height: 100%;
+                .form-group {
+                    position: relative;
+                }
+                .datepick.custom-style {
+                    height: 50px;
+                }
+                input.input-style-bttn {
+                    height: 50px;
+                    font-size: 16px;
+                }
+            }
+             &.showFilter {
+                height: 100%;
+                @include transition(.3s ease-in-out);
+                .close_roomBook { display: block; }
+            }
+        }
+    }
+}
+
+body.unScroll {
+    overflow: hidden;
+}

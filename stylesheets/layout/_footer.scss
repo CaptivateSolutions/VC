@@ -1,0 +1,112 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+
+footer {
+    position: relative;
+    section.testimonial-sec {
+        background: #000;
+        color: #fff;
+        .testimonial-text {
+            margin: 40px 0;
+            text-align: center;
+            .quote {
+                position: relative;
+                p {
+                    padding: 0 15px;
+                    font-size: 16px;
+                }
+            }
+            .author {
+                margin-top: 20px;
+                font-size: 16px;
+                font-family: $text-font-corbel-italic;
+            }
+            @include respond-to(xs) {
+                .quote {
+                    &:before {left: 0;}
+                    &:after {right: 0;}
+                    p {
+                        padding: 0 20px;
+                        font-size: 14px;
+                    }
+                }
+                .author {
+                    font-size: 14px;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+    .main-footer {
+        padding: 40px 0;
+        background: #000;
+        .left, .middle, .right {
+            display: inline-block;
+            vertical-align: middle;
+            @include respond-to(sm) {
+                display: block;
+                margin-bottom: 20px;
+            }
+            @include respond-to(xs) {
+                display: block;
+            }
+        }
+        .left {
+            @include respond-to(xs) {
+                margin-bottom: 10px;
+            }
+        }
+        .right {
+            @include respond-to(sm) {
+                float: none !important;
+            }
+             @include respond-to(xs) {
+                float: none !important;
+            }
+        }
+        ul.soc-links {
+            margin-right: 10px;
+            margin-bottom: 0;
+            display: inline-block;
+            li {
+                display: inline-block;
+                a {
+                    display: block;
+                }
+            }
+        }
+        ul.menu-left, ul.menu-right {
+            margin-bottom: 0;
+            li {
+                display: inline-block;
+                border-right: 1px solid #fff;
+                padding: 0 15px;
+                font-size: 12px;
+                &:last-child {
+                    border-right: 0;
+                    padding-right: 0;
+                }
+                @include respond-to(sm) {
+                   &:first-child {
+                       padding-left: 0;
+                   }
+                }
+                @include respond-to(xs) {
+                    display: block;
+                    border: 0;
+                    padding-left: 0;
+                }
+            } 
+        }
+        ul.menu-right {
+            margin-top: 14px;
+            @include respond-to(sm) {
+                margin-top: 0;
+            }
+            @include respond-to(xs) {
+                margin-top: 0;
+            }
+        }
+    }
+}

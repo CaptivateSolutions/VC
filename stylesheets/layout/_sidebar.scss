@@ -1,0 +1,313 @@
+﻿
+.radio-selector {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-bottom: 8px;
+
+    input {display: none;}
+    label {
+        margin-bottom: 0;
+        position: relative;
+        padding-left: 30px;
+        cursor: pointer;
+        color: #fff;
+        font-size: 15px;
+        font-weight: normal;
+        text-transform: capitalize;
+        cursor: pointer;
+        @include transition(.3s ease-in-out);
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            background: #fff;
+        }
+        &:after {
+            content: '\f00c';
+            font-family: 'FontAwesome';
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            text-align: center;
+            color: #000;
+        }
+        &:hover {
+            color: #c0c0c0;
+        }
+        &.no-box {
+           text-transform: uppercase;
+           &:after {
+                content: '\f00d';
+                color: #c0c0c0;
+            }
+        }
+    }
+    input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
+        color: #c0c0c0;
+        font-family: $text-font-corbel-bold;
+    }
+    input[type="radio"]:checked + label:after, input[type="checkbox"]:checked + label:after {
+        display : block;
+    }
+}
+.radio-selector-box {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-bottom: 15px;
+
+    input[type="radio"], input[type="checkbox"] {display: none;}
+    label {
+        margin-bottom: 0;
+        position: relative;
+        padding-left: 30px;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: normal;
+        cursor: pointer;
+        @include transition(.3s ease-in-out);
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            background: #fff;
+            color: #000;
+            text-align: center;
+            box-shadow: 0 0 5px #000;
+            box-shadow: 0 0 5px rgba(0,0,0,.3);
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            height: 12px;
+            width: 12px;
+            background: #000;
+            display: none;
+            left: 4px;
+            top: 4px;
+        }
+    }
+    input[type="radio"]:checked + label:after, input[type="checkbox"]:checked + label:after {
+        display: block
+    }
+}
+.room-selection-sidebar, .gallery-sidebar {
+    .branch-select {
+        padding: 15px;
+        margin-bottom: 20px;
+        h4 {
+            margin-top: 0;
+            color: #c0c0c0;
+            font-size: 17px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        select {
+            text-transform: uppercase;
+        }
+    }
+    .available-rooms {
+        padding: 15px;
+        margin-bottom: 20px;
+        h4 {
+            margin-top: 0;
+            color: #c0c0c0;
+            font-size: 17px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        .atype-sel {
+            margin-bottom: 0;
+            select {
+                width: 49%;
+            }
+        }
+    }
+    .room-type, .recommendation  {
+        padding: 15px;
+        margin-bottom: 20px;
+        h4 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: #c0c0c0;
+            font-size: 17px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+    }
+    .room-type label {
+        text-transform: uppercase;
+    }
+    .search-room-sel {
+        .search-room-bttn {
+            padding: 15px 0;
+            background-color: #1A1A1A;
+            border-radius: 0;
+            color: #c0c0c0;
+            font-size: 24px;
+            text-transform: uppercase;
+            @include transition(.3s ease-in-out);
+            @include on-event() {
+                background-color: #c0c0c0;
+                color: #1A1A1A;
+            }
+        }
+    }
+    @include respond-to(md) {
+        .branch-select, .available-rooms, .room-type, .recommendation {
+            padding: 15px 0;
+        }
+    }
+}
+
+.food-selection-sidebar {
+    .food-choices, .order-details  {    
+        margin-bottom: 20px;
+        padding: 15px;
+        h4 {
+            margin-top: 0;
+            margin-bottom: 30px;
+            color: #8e1b20;
+            text-align: center;
+            text-transform: none;
+        }
+        img {
+            width: auto;
+            max-width: 100%;
+            margin: auto;
+            margin-bottom: 25px;
+        }
+    }
+    .food-choices {
+        padding: 15px 30px;
+        label {
+            color: #000;
+            text-transform: uppercase;
+            &.no-box:after {color: #000;}
+        }
+        label:before,
+        label:after {
+            box-shadow: 0 0 5px #000;
+            box-shadow: 0 0 5px rgba(0,0,0,.3);
+        }
+        input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
+            color: #000;
+            font-family: $text-font-corbel-bold;
+        }
+        @include respond-to(sm) {
+            padding: 15px;
+        }
+        @include respond-to(xs) {
+            padding: 15px;
+        }
+    }
+    .order-details {   
+        border-radius: 8px;
+        background: #fff; 
+        box-shadow: 0 2px 15px #000;
+        box-shadow: 0 2px 15px rgba(0,0,0,.3);
+        table {
+            width: 100%;
+            color: #808080;
+            font-size: 16px;
+            tbody {
+                padding-bottom: 30px;
+                border-bottom: 1px solid #808080;
+                tr {
+                    td {
+                        padding-bottom: 10px;
+                        &.price {
+                            text-align: right;
+                        }
+                    }
+                    &:last-child {
+                        td {padding-bottom: 30px;}
+                    }
+                }
+            }
+            tfoot {
+                text-align: right;
+                text-transform: uppercase;
+                color: #000;
+                td {
+                    padding-top: 10px;
+                    &.total-text {
+                        font-size: 16px;
+                    }
+                    &.total-food-price {
+                        font-size: 25px;
+                    }
+                }
+            }
+        }
+    }
+    .order-bttn-holder {
+        .order-now-bttn {
+            padding: 15px 0;
+            background-color: #c0c0c0;
+            border: 1px solid #c0c0c0;
+            border-radius: 8px;
+            color: #000;
+            font-size: 16px;
+            text-transform: uppercase;
+            box-shadow: none;
+            @include transition(.3s ease-in-out);
+            @include on-event() {
+                background-color: #fff;
+                color: #000;
+            }
+            @include respond-to(md) {
+                font-size: 18px;
+            }
+            @include respond-to(sm) {
+                font-size: 16px;
+            }
+        }
+    }
+    .served-time {
+        /*margin-bottom: 20px;*/
+        padding: 15px;
+        .head {
+            color: #8e1b20;
+            font-size: 18px;
+            text-align: center;
+        }
+        .radio-selector-box {
+            .form-group.checkin {
+                display: none;
+                margin: 10px 10px 10px 35px;
+                input {
+                    box-shadow: 0 0 5px #000;
+                    box-shadow: 0 0 5px rgba(0,0,0,.3);
+                    @include on-event() {
+                        box-shadow: 0 0 5px #000;
+                        box-shadow: 0 0 5px rgba(0,0,0,.3);
+                    }
+                    @include placeholder(#000);
+                }
+            }
+            input[id="pref_time"]:checked ~ .form-group.checkin {
+                display: block;
+            }
+        }
+    }
+}
+

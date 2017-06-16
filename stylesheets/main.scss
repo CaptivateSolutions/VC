@@ -1,0 +1,51 @@
+﻿@charset 'UTF-8';
+
+// 1. Configuration and helpers
+@import
+  'utils/variables',
+  'utils/functions',
+  'utils/mixins';
+
+// 2. Vendors
+@import
+  'vendors/bootstrap';
+
+// 3. Base stuff
+@import
+  'base/base',
+  'base/fonts',
+  'base/typography',
+  'base/helpers';
+
+// 4. Layout-related sections
+@import
+  'layout/accordion',
+  'layout/banner',
+  'layout/carousel',
+  'layout/header',
+  'layout/insta-feed',
+  'layout/footer',
+  'layout/sidebar',
+  'layout/step-tabs';
+
+// 5. Components
+@import
+  'components/buttons',
+  'components/form';
+
+// 6. Page-specific styles
+@import
+  'pages/about',
+  'pages/careers',
+  'pages/contact',
+  'pages/gallery',
+  'pages/home',
+  'pages/menu',
+  'pages/payment',
+  'pages/promotion',
+  'pages/room-booking',
+  'pages/room-selection';
+
+// 7. Themes
+@import
+  'themes/default';

@@ -1,0 +1,213 @@
+﻿
+.acc_main_holder {
+    position: relative;
+    margin-bottom: 20px;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.acc_list_head {
+    background: #000;
+    position: relative;
+    border: 1px solid #fff;
+    border: 1px solid rgba(255,255,255,.5);
+    border-radius: 8px;
+    /*&:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        bottom: 0;
+        height: 30%;
+        width: 70%;
+        z-index: -1;
+        border-radius: 50%;
+        box-shadow: 0 3px 7px #fff,0 4px 20px #fff;
+        box-shadow: 0 3px 7px #fff,0 4px 20px rgba(255,255,255,.5);
+    }*/
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: 0;
+        height: 15px;
+        width: 95%;
+        z-index: -1;
+        border-radius: 50%;
+        box-shadow: 0 -4px 3px -1px #fff,0 -4px 9px -1px #fff;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        bottom: 0;
+        height: 15px;
+        width: 95%;
+        z-index: -1;
+        border-radius: 50%; 
+        box-shadow: 0 5px 3px -2px #fff,0 5px 9px -2px #fff; 
+    }
+    h3 {
+        position: relative;
+        margin: 0;
+        padding: 20px 50px 20px 15px;
+        color: #fff; 
+        cursor: pointer;
+        font-size: 18px;
+        &:before {
+            content: '\f0d7';
+            font-family: 'FontAwesome';
+            position: absolute;
+            right: 15px;
+            color: #929497;
+            font-size: 20px;
+            line-height: 14px;
+        }
+        &[aria-expanded="true"] {
+             color: #c0c0c0;
+             &:before {
+                content: '\f0d8';
+                font-family: 'FontAwesome';
+                position: absolute;
+                right: 15px;
+                color: #c0c0c0;
+                font-size: 20px;
+                line-height: 10px;
+            }
+        }
+        @include respond-to(xs) {
+            font-size: 16px;
+        }
+    }
+}
+
+.sub_acc_holder {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.sub_acc_list_head {
+    background: #1a1a1a;
+    h4 {
+        position: relative;
+        overflow: hidden;
+        margin: 0;
+        padding: 20px 30px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 16px;
+        &:before {
+            content: '\f0d7';
+            font-family: 'FontAwesome';
+            position: absolute;
+            right: 30px;
+            color: #929497;
+            font-size: 24px;
+            line-height: 14px;
+        }
+        .cr_position {
+            display: inline-block;
+            width: 45%;
+            vertical-align: top;
+            @include respond-to(sm) {
+                width: 40%;
+            }
+            @include respond-to(xs) {
+                display: block;
+                width: 90%;
+            }
+        }
+        .cr_vacancy {
+            color: #929497;
+            display: inline-block;
+            width: 23.5%;
+            vertical-align: top;
+            @include respond-to(xs) {
+                display: block;
+                width: 90%;
+            }
+        }
+        .cr_posted, .promo_posted {
+            color: #929497;
+            @include respond-to(xs) {
+                display: block;
+                width: 90%;
+            }
+        }
+        .promo_title {
+            display: inline-block;
+            width: 69%;
+            vertical-align: top;
+            @include respond-to(sm) {
+                width: 53%;
+            }
+            @include respond-to(xs) {
+                display: block;
+                width: 90%;
+            }
+        }
+        &[aria-expanded="true"] {
+            color: #c0c0c0;
+            .cr_vacancy, .cr_posted, .promo_posted, {
+                color: #c0c0c0;
+            }
+            &:before {
+                content: '\f0d8';
+                font-family: 'FontAwesome';
+                position: absolute;
+                right: 30px;
+                color: #c0c0c0;
+                font-size: 24px;
+                line-height: 12px;
+            }
+        }
+        @include respond-to(xs) {
+           padding: 20px 15px;
+       }
+    }
+}
+
+.acc_list_body {
+    padding: 30px;
+    @include respond-to(xs) {
+        padding: 15px 0;
+    }
+}
+
+.sub_acc_list_body {
+   position: relative;
+   overflow: hidden;
+   background: #1a1a1a;
+   padding: 0 15px 30px;
+
+   @include respond-to(xs) {
+    padding: 0 0 15px;
+   }
+
+   &.contact_list_body {
+       padding: 30px 15px;
+       @include respond-to(xs) {
+           padding: 30px 0;
+       }
+       .con_det_txt {
+            margin: 0;
+            margin-bottom: 20px;
+            color: #c0c0c0;
+            font-size: 16px;
+       }
+   }
+}
